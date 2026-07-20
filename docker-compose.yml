@@ -1,0 +1,18 @@
+services:
+  api:
+    build: ./backend
+    ports: ["8000:8000"]
+    environment:
+      SECRET_KEY: ${SECRET_KEY:-hackathon-demo-change-this}
+      DATABASE_URL: sqlite:///./data/pulsepredict.db
+      MODEL_PATH: ./data/model.joblib
+      FRONTEND_ORIGIN: http://localhost:5173
+    volumes: ["app_data:/app/data"]
+  web:
+    build: ./frontend
+    ports: ["5173:5173"]
+    environment:
+      VITE_API_URL: http://localhost:8000
+    depends_on: [api]
+volumes:
+  app_data:
