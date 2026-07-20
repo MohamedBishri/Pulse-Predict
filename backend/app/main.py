@@ -18,7 +18,7 @@ app.add_middleware(
         "http://localhost:5173",
         "http://localhost:5174",
         "http://127.0.0.1:5173",
-        "https://pulse-predict-m5bz1vaes-mohamed-bishri.vercel.app",
+        "https://pulse-predict-fawn.vercel.app",
     ],
     allow_origin_regex=r"https://pulse-predict-[a-z0-9-]+-mohamed-bishri\.vercel\.app",
     allow_credentials=True,
